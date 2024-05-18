@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product, Products } from '../../assets/mock-data';
 import { CommonModule } from '@angular/common';
 import { ProductDisplayComponent } from './product-display/product-display.component';
+import { HighlightDirective } from '../highlight.directive';
 
 @Component({
   selector: 'app-product-list',
@@ -14,10 +15,11 @@ export class ProductListComponent{
   @Output() selectedProduct$ = new EventEmitter<Product>();
 
   @Input() childText = '';
+  productSelected: Product | undefined;
 
   onProductSelected(product: Product) {
     this.selectedProduct$.emit(product)
-  
+    this.productSelected = product;
     // this.selectedProduct.emit(product);
   }
 }

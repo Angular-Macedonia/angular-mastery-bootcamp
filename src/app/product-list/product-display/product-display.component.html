@@ -1,4 +1,7 @@
-<div class="product" (click)="clickProduct()">
+<div
+  appHighlight
+  [color]='"red"'
+  class="product" (click)="clickProduct()">
     <span>Name: </span>{{product.name}}
     <span>Price:</span>{{product.price}}$
 </div>
