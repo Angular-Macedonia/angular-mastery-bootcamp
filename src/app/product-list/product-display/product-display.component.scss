@@ -1,0 +1,11 @@
+.product {
+    border: 1px solid black;
+    box-shadow: 1px 2px 2px 1px;
+    width: 200px;
+    margin: 5px 0;
+
+    &:hover {
+        transform: scale(1.01);
+        cursor: pointer;
+    }
+}

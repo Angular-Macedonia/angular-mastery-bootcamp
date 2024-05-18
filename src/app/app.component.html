@@ -1,4 +1,9 @@
-<app-product-list [products]="products" (selectedProduct)="onProductSelected($event)"></app-product-list>
+<app-product-list 
+[products]="products" 
+(selectedProduct$)="onProductSelected($event)"
+>
+</app-product-list>
+
 
 <div *ngIf="selectedProduct">
   <h2>Selected product</h2>
@@ -6,3 +11,10 @@
   <p>{{selectedProduct.price}}</p>
 </div>
 
+<div>
+  <h2>
+    Parent Component
+  </h2>
+  <input type="text" [(ngModel)]="parentText">
+  <app-product-list [childText]="parentText"></app-product-list>
+</div>

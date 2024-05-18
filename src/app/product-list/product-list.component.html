@@ -1,3 +1,13 @@
-<div *ngFor="let product of products">
+<!-- <div *ngFor="let product of products">
     <p (click)="onProductSelected(product)">{{product.name}}</p>
+</div> -->
+
+<app-product-display 
+    *ngFor="let product of products"
+    [product]="product"
+    (clickedProduct)="onProductSelected($event)"
+></app-product-display>
+
+<div>
+    <p>Child text: {{childText}}</p>
 </div>
