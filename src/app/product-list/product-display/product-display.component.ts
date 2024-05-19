@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../assets/mock-data';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-display',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './product-display.component.html',
   styleUrl: './product-display.component.scss'
 })

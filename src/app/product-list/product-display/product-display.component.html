@@ -1,4 +1,4 @@
 <div class="product" (click)="clickProduct()">
-    <span>Name: </span>{{product.name}}
-    <span>Price:</span>{{product.price}}$
+    <span>Name: </span>{{product.name | uppercase}}
+    <span>Price:</span>{{product.price | currency :'EUR':'symbol'}}
 </div>
