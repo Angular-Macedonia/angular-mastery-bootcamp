@@ -3,7 +3,7 @@
 </div> -->
 
 <app-product-display
-    *ngFor="let product of products"
+    *ngFor="let product of products | sortList:'name'"
     [product]="product"
     (clickedProduct)="onProductSelected($event)"
 ></app-product-display>
@@ -19,3 +19,6 @@
 <ng-template #selectedProd>
   <h2>You have selected a product</h2>
 </ng-template>
+
+
+<button (click)="addValue()">add</button>

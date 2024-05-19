@@ -1,12 +1,13 @@
 import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../../assets/mock-data';
+import { CommonModule } from '@angular/common';
 import { HighlightDirective } from '../../highlight.directive';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-display',
   standalone: true,
-  imports: [HighlightDirective],
+  imports: [CommonModule, HighlightDirective],
   templateUrl: './product-display.component.html',
   styleUrl: './product-display.component.scss'
 })
