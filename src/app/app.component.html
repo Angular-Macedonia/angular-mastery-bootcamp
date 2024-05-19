@@ -1,25 +1,46 @@
-<app-product-list
-[products]="products"
-(selectedProduct$)="onProductSelected($event)"
->
-</app-product-list>
+<!--<app-template-forms></app-template-forms>-->
+<!--<app-reactive-forms></app-reactive-forms>-->
+<!--<ng-container-->
+<!--  *ngIf='loading$$ | async'-->
+<!--&gt;-->
+<!--  <h1>Products are loading...</h1>-->
+<!--</ng-container>-->
 
-<div
-  appHighlight
->
-  Highlight me
-</div>
+<!--<app-product-list-->
+<!--[products]="products"-->
+<!--(selectedProduct$)="onProductSelected($event)"-->
+<!--&gt;-->
+<!--</app-product-list>-->
+<h1>home page</h1>
+<button
+  [routerLink]='["products"]'
+>PRODUCTS</button>
 
-<div *ngIf="selectedProduct">
-  <h2>Selected product</h2>
-  <p>{{selectedProduct.name}}</p>
-  <p>{{selectedProduct.price}}</p>
-</div>
 
-<div>
-  <h2>
-    Parent Component
-  </h2>
-  <input type="text" [(ngModel)]="parentText">
-  <app-product-list [childText]="parentText"></app-product-list>
-</div>
+<button
+  (click)='navigate()'
+>PRODUCTS</button>
+
+<!--<h2>Price: {{price}}</h2>-->
+
+<!--<div-->
+<!--  appHighlight-->
+<!--&gt;-->
+<!--  Highlight me-->
+<!--</div>-->
+
+<!--<div *ngIf="selectedProduct">-->
+<!--  <h2>Selected product</h2>-->
+<!--  <p>{{selectedProduct.name}}</p>-->
+<!--  <p>{{selectedProduct.price}}</p>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <h2>-->
+<!--    Parent Component-->
+<!--  </h2>-->
+<!--  <input type="text" [(ngModel)]="parentText">-->
+<!--  <app-product-list [childText]="parentText"></app-product-list>-->
+<!--</div>-->
+
+<router-outlet></router-outlet>

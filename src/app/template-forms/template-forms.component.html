@@ -1,0 +1,64 @@
+<form class="form"
+      #form="ngForm"
+  (ngSubmit)='onSubmit()'
+>
+  <div class="form-field">
+    <label for="name">First Name</label>
+    <input
+      required
+      [(ngModel)]='order.firstName'
+      name="first-name"
+      type="text"
+      id="name"
+      placeholder="Enter your name">
+  </div>
+  <div class="form-field">
+    <label for="last-name">Last Name</label>
+    <input
+      required
+      [(ngModel)]='order.lasName'
+      name="last-name"
+      type="text"
+      id="last-name"
+      placeholder="Enter your last name">
+  </div>
+  <div class="form-field">
+    <label for="address">Address</label>
+    <input
+      [(ngModel)]='order.address'
+      required
+      minlength="3"
+      name="address"
+      type="text"
+      id="address"
+      placeholder="Enter your address">
+  </div>
+  <fieldset
+    ngModelGroup='email'
+    #email="ngModelGroup"
+    appConfirmEmail
+  >
+    <legend>User Email</legend>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input
+        [(ngModel)]='order.userEmail'
+        name="email"
+        type="email"
+        id="email"
+        placeholder="Enter email">
+    </div>
+    <div class="form-field">
+      <label for="confirm-email">Confirm Email</label>
+      <input
+        [(ngModel)]='order.confirmUserEmail'
+        name="confirm-email"
+        type="email"
+        id="confirm-email"
+        placeholder="Confirm the email">
+    </div>
+  </fieldset>
+  <p>{{displayConfirmEmailError(email)}}</p>
+  <button [disabled]='form.invalid' >Save</button>
+  <button type='button' (click)='onReset()' class="reset-button">Reset</button>
+</form>

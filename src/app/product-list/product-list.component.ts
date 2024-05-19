@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Inject, Input, OnInit, Output } from '@angular/core';
 import { Product, Products } from '../../assets/mock-data';
 import { CommonModule } from '@angular/common';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { HighlightDirective } from '../highlight.directive';
+import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,8 +11,16 @@ import { HighlightDirective } from '../highlight.directive';
   imports: [CommonModule, ProductDisplayComponent],
   templateUrl: './product-list.component.html'
 })
-export class ProductListComponent{
-  @Input() products: Product[] = [];
+export class ProductListComponent implements OnInit {
+
+  newsService = inject(NewsService);
+
+  ngOnInit(): void {
+    this.newsService.getProduct().subscribe({
+      next: (products) => this.products = products
+    })
+  }
+  products: Product[] = [];
   @Output() selectedProduct$ = new EventEmitter<Product>();
 
   @Input() childText = '';

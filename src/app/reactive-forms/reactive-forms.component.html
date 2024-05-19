@@ -1,0 +1,58 @@
+<form class="form"
+      [formGroup]='form'
+>
+  <div class="form-field">
+    <label for="name">First Name</label>
+    <input
+      [formControlName]='"firstName"'
+      name="first-name"
+      type="text"
+      id="name"
+      placeholder="Enter your name"
+    >
+  </div>
+  <div class="form-field">
+    <label for="last-name">Last Name</label>
+    <input
+      [formControlName]='"lastName"'
+      name="last-name"
+      type="text"
+      id="last-name"
+      placeholder="Enter your last name">
+  </div>
+  <div class="form-field">
+    <label for="address">Address</label>
+    <input
+      [formControlName]='"address"'
+      minlength="3"
+      name="address"
+      type="text"
+      id="address"
+      placeholder="Enter your address">
+  </div>
+  <fieldset
+    [formGroupName]='"email"'
+  >
+    <legend>User Email</legend>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input
+        [formControlName]='"email"'
+        name="email"
+        type="email"
+        id="email"
+        placeholder="Enter email">
+    </div>
+    <div class="form-field">
+      <label for="confirm-email">Confirm Email</label>
+      <input
+        [formControlName]='"confirmEmail"'
+        name="confirm-email"
+        type="email"
+        id="confirm-email"
+        placeholder="Confirm the email">
+    </div>
+  </fieldset>
+  <button>Save</button>
+  <button type='button' class="reset-button">Reset</button>
+</form>
