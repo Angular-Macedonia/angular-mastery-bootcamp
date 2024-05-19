@@ -1,9 +1,14 @@
-<app-product-list 
-[products]="products" 
+<app-product-list
+[products]="products"
 (selectedProduct$)="onProductSelected($event)"
 >
 </app-product-list>
 
+<div
+  appHighlight
+>
+  Highlight me
+</div>
 
 <div *ngIf="selectedProduct">
   <h2>Selected product</h2>
